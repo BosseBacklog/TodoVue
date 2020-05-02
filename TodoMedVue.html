@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Testsida</title>
+
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" id="majs">
+        <list-component id="l1"></list-component>
+        <list-component id="l2"></list-component>
+        <list-component id="l3"></list-component>
+       
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+    </script>
+    <script>
+        const poo =  "afsdfds"
+        Vue.component('list-component', {
+            data() {
+                return {
+                    todo: []
+                }
+            },
+            methods: {
+                addItem(evt) {
+                    let text = document.getElementById("majs").value
+                    this.todo.push(text)
+                },
+                removeItem(evt) {
+                    let nummer = Number(document.getElementById("majs").value)
+                    this.todo.splice(nummer, 1)
+                    /*let away = document.getElementById("majs").value
+                    rmve(away)*/
+                },
+                rmve(index) {
+                 document.getElementById(l2).splice[index]
+                }
+            },
+            template: `<div>
+                 <input type="button" value="Add" @click="addItem">
+                 <input type ="button" Value="Remove" @click="removeItem">
+                    <ul>
+                    <li v-for="item in todo">{{item}}</li>
+                    </ul>
+                </div>`
+        })
+
+        let app = new Vue({
+            el: '#app'
+        })
+
+    </script>
+
+</body>
+
+</html>

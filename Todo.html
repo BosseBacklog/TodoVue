@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Övning</title>
+
+    <style>
+        #todo {
+            font-size: 150%;
+            width: 33%;
+            background-color: crimson;
+        }
+
+        #doing {
+            width: 33%;
+            background-color: darkgoldenrod;
+        }
+
+        #done {
+            width: 33%;
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="display: flex;">
+        <div id="todo">
+            <input id="todoInput" type="text" name="todo">
+            <button id="todoAdd">Add</button>
+            <ul id="todoList">
+
+            </ul>
+        </div>
+        <div id="doing">
+            <ul id="doingList">
+
+            </ul>
+
+        </div>
+        <div id="done">
+            majs majs majs majs majs majs majs majs majs majs majs majs majs majs majs majs
+            majs majs majs majs majs majs majs majs majs majs majs majs majs majs majs majs
+            majs majs majs majs majs majs majs majs majs majs majs majs majs majs majs majs
+            majs majs majs majs majs majs majs majs majs majs majs majs majs majs majs majs
+            majs majs majs majs majs majs majs majs majs majs majs majs majs majs majs majs
+        </div>
+    </div>
+
+
+    <script>
+        const todo = ['köpa mjölk', 'döda allt', 'förstöra miljön']
+
+        for (let i = 0; i < todo.length; i++) {
+            let mus = document.getElementById('todoList')
+            let strong = document.createElement('li')
+            strong.innerText = todo[i]
+            mus.appendChild(strong)
+        }
+        window.addEventListener('load', () => {
+            let input = document.getElementById('todoInput')
+            let theButton = document.getElementById('todoAdd')
+            theButton.addEventListener('click', () => todo.push(input.value))
+            theButton.addEventListener('click', () => addTodo(input.value))
+        })
+
+        function addTodo(newTodo) {
+            let mus = document.getElementById('todoList')
+            let strong = document.createElement('li')
+            strong.innerText = newTodo
+            mus.appendChild(strong)
+        }
+        function updateTodo() {
+            /* const getTodo = fruits.find(fruit => fruit.name === 'apples');*/
+            let navbar = document
+                .getElementById("todoList")
+                .querySelectorAll('li');
+
+            for (let i = 0; i < todo.length; i++) {
+                if (todo[i] !== undefined && navbar[i].innerText === undefinedzgs) {
+                    addTodo(todo[i])
+                }
+            }
+        }
+
+
+        let snusk = document
+            .getElementById("todoList")
+            .querySelectorAll('li');
+
+        /*navbar.forEach((item, index) => {
+            console.log({ index, item })
+        });*/
+
+
+    </script>
+</body>
+
+</html>
