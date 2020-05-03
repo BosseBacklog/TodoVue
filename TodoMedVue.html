@@ -9,7 +9,7 @@
 
 <body>
     <div id="app">
-        <input type="text" id="majs">
+        <input type="text" id="inputruta">
         <list-component id="l1"></list-component>
         <list-component id="l2"></list-component>
         <list-component id="l3"></list-component>
@@ -27,11 +27,11 @@
             },
             methods: {
                 addItem(evt) {
-                    let text = document.getElementById("majs").value
+                    let text = document.getElementById("inputruta").value
                     this.todo.push(text)
                 },
                 removeItem(evt) {
-                    let nummer = Number(document.getElementById("majs").value)
+                    let nummer = Number(document.getElementById("inputruta").value)
                     this.todo.splice(nummer, 1)
                     /*let away = document.getElementById("majs").value
                     rmve(away)*/
